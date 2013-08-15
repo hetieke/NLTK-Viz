@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+<style>
+
+body {
+  font: 10px sans-serif;
+  
+}
+
+.yAxis path,
+.xAxis path,
+.yAxis line,
+.xAxis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.yaxis {fill:none}
+
+
+svg{display:block;}
+
+.bar {
+  fill: steelblue;
+}
+
+.keyword {font-size: 80}
+
+#feedbacktitle {position:relative; left:80px; font: 20px sans-serif;}
+#feedbacktext {position:relative; left:80px;}
+#feedbacktext {border-style:solid; border-width:medium;border-color:#000000;}
+
+</style>
+</head>
+<body></body>
+<script  src="d3/d3.v3.min.js"></script>
+<script  src="Barfromjson8.2.13.js"></script>
+<div id="feedbacktitle" style="height:40px;width:960px;">Feedback Text</div>
+<div id="feedbacktext" style="height:200px;font-size:20px;width:960px;overflow:auto;text-align:left;" type="text/html">
+</div>
+</html>
