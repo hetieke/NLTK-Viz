@@ -1,4 +1,7 @@
 
+var drawOlabsvg={
+
+drawAll: function() {
 var margin = {top: 35, right: 200, bottom: 20, left: 80},
     width = 960 - margin.left - margin.right,
     height = 300 - margin.top - margin.bottom;
@@ -10,15 +13,15 @@ var xAxis = d3.svg.axis()
     .scale(x)
     .orient("bottom");
   
-var svg = d3.select("body").append("svg")
+var svg = d3.select("#d3space").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-var svg_legend = d3.select("body").append("svg")
+var svg_legend = d3.select("#d3space").append("svg")
     .attr("width", width+margin.left)
-    .attr("height", 200)
+    .attr("height", 250)
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -33,7 +36,7 @@ i=0;
 var ydomain=[];
 var pages=[];
 
-d3.json("hoteltopkwbyurl.json", function(error, json) {
+d3.json("topkwbyurl.json", function(error, json) {
 	if (error) return console.warn(error)
 		data=json
 
@@ -222,14 +225,28 @@ d3.json("hoteltopkwbyurl.json", function(error, json) {
 		.attr("x", (width / 4))             
 		.attr("y", 0 - (margin.top / 2))
 		.attr("text-anchor", "left")  
-		.style("font-size", "14px") 
+		.style("font-size", "15px") 
 		.text(data['charttitle']);
 
 	svg.append("text")
 		.attr("x", (width / 4))             
 		.attr("y", 0 - (margin.top / 7))
 		.attr("text-anchor", "left")  
-		.style("font-size", "10px") 
+		.style("font-size", "12px") 
 		.text(data['chartnote']);
 	  
 });
+},
+removeAll: function() {
+	d3.selectAll("svg").remove();
+},
+redrawAll: function() {
+	var drawOlabsvg=this;
+	drawOlabsvg.removeAll();
+	drawOlabsvg.drawAll();
+}
+};
+
+// $(function() {
+//   drawOlabsvg.drawAll();
+// });

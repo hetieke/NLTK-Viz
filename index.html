@@ -2,43 +2,35 @@
 <html>
 <meta charset="utf-8">
 <head>
-<style>
-
-body {
-  font: 10px sans-serif;
-  
-}
-
-.yAxis path,
-.xAxis path,
-.yAxis line,
-.xAxis line {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
-}
-
-.yaxis {fill:none}
-
-
-svg{display:block;}
-
-.bar {
-  fill: steelblue;
-}
-
-.keyword {font-size: 80}
-
-#feedbacktitle {position:relative; left:80px; font: 20px sans-serif;}
-#feedbacktext {position:relative; left:80px;}
-#feedbacktext {border-style:solid; border-width:medium;border-color:#000000;}
-
-</style>
+<link rel="stylesheet" type="text/css" href="nltkvizcss.css"></link>
 </head>
-<body></body>
-<script  src="d3/d3.v3.min.js"></script>
-<script  src="Barfromjson8.2.13.js"></script>
+<body>
+<div id="AccordionContainer" class="AccordionContainer">
+  <div onclick="runAccordion(1);">
+    <div class="AccordionTitle" onselectstart="return false;">
+      Click to Enter Comment Search
+    </div>
+  </div>
+  <div id="Accordion1Content" class="AccordionContent">
+    <input id='domaininput' class="Accordioninput" type="text" name="domaininput" placeholder="enter a domain/vertical of interest, like "hotel"">
+    <input id='subdomainput' class="Accordioninput" type="text" name="subdomainput" placeholder="enter any domain/vertical to exclude, like "mobile">
+    <input id='keywordlist' class="Accordioninput" type="text" name="keywordlist" placeholder="enter list of thematic key words you care about in the comments">
+    <input id='startdate' class="Accordioninput" type="text" name="startdate" placeholder="Enter start date as 'YYYY-MM-DD">
+    <input id='enddate' class="Accordioninput" type="text" name="enddate" placeholder="Enter end date as 'YYYY-MM-DD">
+    <input id='minwordcount' class="Accordioninput" type="text" name="minwordcount" placeholder="enter minimum word count to display in graph">    
+    <button id="btn_api" type="button">Get Data</button>
+  </div>
+</div>
+</body>
+<div id="d3space"></div>
 <div id="feedbacktitle" style="height:40px;width:960px;">Feedback Text</div>
 <div id="feedbacktext" style="height:200px;font-size:20px;width:960px;overflow:auto;text-align:left;" type="text/html">
 </div>
+<script src="/jquery/jquery-2.0.3.js"></script>
+<script src="http://localhost:8080/socket.io/socket.io.js"></script>
+<script  src="d3/d3.v3.min.js"></script>
+<script  src="Barfromjson8.2.13.js"></script>
+<script type="text/javascript">window.onload=drawOlabsvg.drawAll();</script>
+<script src="test_app.js"></script>
+<script src="accordionjs.js"></script>
 </html>

@@ -1,0 +1,74 @@
+body {
+  font: 10px sans-serif;
+  
+}
+
+.yAxis path,
+.xAxis path,
+.yAxis line,
+.xAxis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.yaxis {fill:none}
+
+svg{display:block;}
+
+/* 
+
+.bar {
+  fill: steelblue;
+}
+ */
+
+.keyword {font-size: 40px}
+
+#feedbacktitle {position:relative; left:80px; font: 20px sans-serif;}
+#feedbacktext {position:relative; left:80px; font: 20px sans-serif; border-style:solid; border-width:medium;border-color:#000000;}
+/* #feedbacktext {border-style:solid; border-width:medium;border-color:#000000;} */
+
+.AccordionTitle, .AccordionContent, .AccordionContainer
+{
+  position:relative;
+  width:400px;
+}
+
+.AccordionTitle
+{
+  height:20px;
+  overflow:hidden;
+  cursor:pointer;
+  font-family:Arial;
+  font-size:8pt;
+  font-weight:bold;
+  vertical-align:middle;
+  text-align:center;
+  background-repeat:repeat-x;
+  display:table-cell;
+/*   background-image:url('http://tech.pro/_sotc/sites/default/files/108/images/title_repeater.jpg'); */
+  -moz-user-select:none;
+}
+
+.AccordionContent
+{
+  height:0px;
+  overflow:auto;
+  display:none; 
+}
+
+.AccordionContainer
+{
+  	border-top: solid 1px #C1C1C1;
+  	border-bottom: solid 1px #C1C1C1;
+  	border-left: solid 2px #C1C1C1;
+  	border-right: solid 2px #C1C1C1;
+	left:80px;
+}
+
+.Accordioninput
+{
+	width:400px;
+	display:block;
+}
