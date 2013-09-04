@@ -1,5 +1,5 @@
 var httpd = require("http").createServer(handler);
-var io=require('/Users/mgoold/Virtualenvs/node_modules/socket.io/lib/socket.io').listen(httpd);
+var io=require('/Users/user/Virtualenvs/node_modules/socket.io/lib/socket.io').listen(httpd);
 var fs = require('fs');
 var url = require("url");
 var path = require("path");
@@ -53,11 +53,11 @@ io.sockets.on('connection',function(socket) {
 		var min='10'
 		var subdomain='hotel'
 		var notsubdomain='mobile'
-		var pythonarrays=['-i386','/Users/mgoold/Virtualenvs/venv-p274/bin/python2.7','/Users/mgoold/Documents/NLTKProject/newpythonolabparsing9.3.13.py']
+		var pythonarrays=['-i386','/Users/user/Virtualenvs/venv-p274/bin/python2.7','/Users/user/Documents/NLTKProject/newpythonolabparsing9.3.13.py']
 		var finalargs=pythonarrays.concat(argvlist);
 		console.log(finalargs);
 		var child= spawn('arch',finalargs)
-// 		var child= spawn('arch',['-i386','/Users/mgoold/Virtualenvs/venv-p274/bin/python2.7','/Users/mgoold/Documents/NLTKProject/newpythonolabparsing9.1.13.py',kw_list,title_text,min,start_date,end_date,subdomain,notsubdomain])
+// 		var child= spawn('arch',['-i386','/Users/user/Virtualenvs/venv-p274/bin/python2.7','/Users/user/Documents/NLTKProject/newpythonolabparsing9.1.13.py',kw_list,title_text,min,start_date,end_date,subdomain,notsubdomain])
 
 		child.on('exit',function(code,signal) {
 			if (code){
